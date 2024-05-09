@@ -2,13 +2,15 @@ format_version: 10
 pipelines:
   helm-charts:
     group: kubernetes
-    label_template: ${COUNT}
+    label_template: "${COUNT}"
     materials:
       ansible:
         git: https://github.com/MMR-46org/roboshop-kubernetes
         shallow_clone: false
         auto_update: true
         branch: main
+        includes:
+          - src/**/*.*
     stages:
       - install:
           fetch_materials: true
@@ -20,8 +22,10 @@ pipelines:
               tasks:
                 - exec:
                     command: bash
-                    arguments: ["helm.sh", "install"]
-
+                    arguments: [ "helm.sh", "install" ]
+      #             - exec:
+      #                 command: bash
+      #                 arguments: [ "helm-prod.sh", "install" ]
       - uninstall:
           fetch_materials: true
           approval:
@@ -32,4 +36,4 @@ pipelines:
               tasks:
                 - exec:
                     command: bash
-                    arguments: ["helm.sh", "uninstall"]
+                    arguments: [ "helm.sh", "uninstall" ]
