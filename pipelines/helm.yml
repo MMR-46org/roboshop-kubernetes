@@ -15,7 +15,7 @@ pipelines:
           approval:
             type: manual
           jobs:
-            deployment:
+            install:
               timeout: 0
               tasks:
                 - exec:
@@ -27,7 +27,7 @@ pipelines:
           approval:
             type: manual
           jobs:
-            deployment:
+            uninstall:
               timeout: 0
               tasks:
                 - exec:
