@@ -1,4 +1,3 @@
-
 ---
 daemonset:
   # Annotations to apply to the daemonset
