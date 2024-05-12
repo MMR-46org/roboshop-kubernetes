@@ -16,3 +16,5 @@ if [ "$1" == "uninstall" ]; then
   kubectl delete -f external-dns.yml
   helm uninstall filebeat
 fi
+
+
