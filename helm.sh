@@ -28,4 +28,7 @@ if [ "$1" == "uninstall" ]; then
 
 fi
 
+# argocd password command:
+# kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
+
 
