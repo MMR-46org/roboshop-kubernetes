@@ -7,7 +7,7 @@ if [ "$1" == "install" ]; then
 
   helm repo update
 
-  helm upgrade -i  nginx-ingress  ingress-nginx/ingress-nginx
+  helm upgrade -i  nginx-ingress  ingress-nginx/ingress-nginx -f ingress.yml
   kubectl apply -f external-dns.yml
   helm upgrade -i filebeat elastic/filebeat -f filebeat.yml
   helm upgrade -i prometheus prometheus-community/kube-prometheus-stack -f prometheus.yml
