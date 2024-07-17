@@ -3,4 +3,4 @@ grafana:
     enabled: true
     ingressClassName: nginx
     hosts:
-      - grafana.madhanmohanreddy.tech
+      - grafana-prod.madhanmohanreddy.tech

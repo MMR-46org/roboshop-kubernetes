@@ -22,10 +22,10 @@ pipelines:
               tasks:
                 - exec:
                     command: bash
-                    arguments: [ "helm.sh", "install" ]
-      #             - exec:
-      #                 command: bash
-      #                 arguments: [ "helm-prod.sh", "install" ]
+                    arguments: [ "helm-dev.sh", "install" ]
+                - exec:
+                    command: bash
+                    arguments: [ "helm-prod.sh", "install" ]
       - uninstall:
           fetch_materials: true
           approval:
@@ -36,4 +36,8 @@ pipelines:
               tasks:
                 - exec:
                     command: bash
-                    arguments: [ "helm.sh", "uninstall" ]
+                    arguments: [ "helm-dev.sh", "uninstall" ]
+
+                - exec:
+                    command: bash
+                    arguments: [ "helm-prod.sh", "uninstall" ]
